@@ -22,27 +22,6 @@
 
 
 /**
- * Helper function to generate headers when serving uploaded files.
- * Mostly copied from BP_Docs_Attachments::generate_headers().
- *
- * @param string $filename Full path to file
- * @return array Headers in key=>value format
- */
-function hcpu_generate_headers( $filename ) {
-	$headers = wp_get_nocache_headers();
-
-	// Content-Type
-	$filetype                = wp_check_filetype( $filename );
-	$headers['Content-Type'] = $filetype['type'];
-
-	// Content-Length
-	$filesize                  = filesize( $filename );
-	$headers['Content-Length'] = $filesize;
-
-	return $headers;
-}
-
-/**
  * Serve the requested file & exit.
  * Mostly copied from wp/ms-files.php.
  */
