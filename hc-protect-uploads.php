@@ -10,6 +10,14 @@
  * Version:         0.1.0
  *
  * @package         HC_Protect_Uploads
+ *
+ * This plugin requires web server config to redirect file requests to this handler - here's how to do that in nginx:
+ *   rewrite ^/files/(.*)$ /?hc-get-file=$1;
+ *
+ * If you only want this active on certain (sub)domains:
+ *   if ($host ~* \.example\.com) {
+ *     rewrite ^/files/(.*)$ /?hc-get-file=$1;
+ *   }
  */
 
 
