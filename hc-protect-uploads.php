@@ -35,12 +35,10 @@ function hcpu_generate_headers( $filename ) {
 }
 
 /**
- * Serve the file content & exit.
+ * Serve the requested file & exit.
  * Mostly copied from wp/ms-files.php.
- *
- * @param string $filename Full path to file
  */
-function hcpu_serve_file( $filename ) {
+function hcpu_serve_file() {
 	$file = rtrim( BLOGUPLOADDIR, '/' ) . '/' . str_replace( '..', '', $_GET[ 'hc-get-file' ] );
 	$current_blog = get_blog_details();
 
