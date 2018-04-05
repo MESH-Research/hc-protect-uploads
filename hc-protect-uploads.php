@@ -86,6 +86,7 @@ function hcpu_serve_file() {
 	// If we made it this far, just serve the file
 	readfile( $file );
 	flush();
+	exit();
 }
 
 /**
